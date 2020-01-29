@@ -6,20 +6,23 @@ Note to self:
 
 Models:
 - [ ] Multilayer percetron
-    - dropout, batch-borm
-- [ ] Find best input for MNIST
+    - Basic
+    - Find best input
+    - dropout
+    - batch norm
 - [ ] CNN
-- [ ] ResNet-X
+    - Basic CIFAR10
+    - Resnet-X
+    - Transfer Learning
 - [ ] Autoencoders
 - [ ] Convolutional AE
 - [ ] VAE
 - [ ] GAN
 - [ ] Graph neural networks (GNNs)
-- [ ] Simple RNN
+- [ ] RNN
     - one-to-many, many-to-one, many-to-many
-- [ ] RNN with LSTM cells
-- [ ] Transfer learning with CNN
-- [X] Tensorboard in Pytorch
+    - RNN with LSTM cells
+
 
 Larger projects:
 - [ ] Object detection / segmentation
