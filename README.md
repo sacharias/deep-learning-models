@@ -1,9 +1,6 @@
 # deep-learning-models
 Implementations of various deep learning models, mainly in PyTorch.
 
-Note to self:
-- Write small information text about each model.
-
 Models:
 - [ ] Multilayer percetron
     - [X] Basic
@@ -22,7 +19,6 @@ Models:
 - [ ] RNN
     - one-to-many, many-to-one, many-to-many
     - RNN with LSTM cells
-
 
 Larger projects:
 - [ ] Object detection / segmentation
