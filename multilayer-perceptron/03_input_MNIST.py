@@ -5,6 +5,8 @@ from torchvision import transforms
 from torch.utils.data import DataLoader
 import torch.nn.functional as F
 import time
+import numpy as np
+import matplotlib.pyplot as plt
 
 # %%
 
@@ -33,6 +35,12 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=Fa
 
 images, labels = iter(train_loader).next()
 print(f"Image batch dim: {images.shape} \nLabel dim: {labels.shape}")
+
+label = labels[0]
+print(type(label))
+
+label2 = torch.zeros([1], dtype=torch.long) + 1
+print(label2)
 
 # %%
 # Model
@@ -105,6 +113,38 @@ for epoch in range(num_epochs):
     print(f"Time: {((time.time() - start_time) / 60):.2} min \n")
 
 print(f"Test Accuracy: {compute_acc(model, test_loader):.3}")
+
+# %% [markdown]
+# Make a new digit by minimizing loss
+
+# %%
+def plot_digit(img):
+    img = img.numpy()
+    plt.imshow(img.reshape(28, 28), cmap="gray")
+    plt.show()
+
+new_img = torch.rand((1, 1, 28, 28), requires_grad=True)
+plot_digit(new_img.detach())
+
+# %%
+model.eval()
+
+for run in range(4000):
+    img_flat = new_img.view(-1, 28*28)
+
+    logits, probs = model(img_flat)
+    label = torch.zeros([1], dtype=torch.long) + 3 # set digit
+    cost = F.cross_entropy(logits, label)
+
+    cost.backward()
+    new_img.data = new_img.data - new_img.grad * 3
+
+    new_img.grad.zero_()
+
+    if run % 400 == 0:
+        print(f"run: {run}")
+        print(cost.item())
+        plot_digit(new_img.detach())
 
 
 # %%
