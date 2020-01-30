@@ -2,15 +2,14 @@
 Implementations of various deep learning models, mainly in PyTorch.
 
 Models:
-- [ ] Multilayer percetron
+- [X] Multilayer percetron
     - [X] Basic
     - [X] Find best input
+- [ ] CNN
+    - [ ] Basic CIFAR10
     - [ ] Dropout
     - [ ] Batch norm
-- [ ] CNN
-    - Basic CIFAR10
-    - Resnet-X
-    - Transfer Learning
+    - [ ] Resnet-X
 - [ ] Autoencoders
 - [ ] Convolutional AE
 - [ ] VAE
