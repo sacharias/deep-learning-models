@@ -6,10 +6,10 @@ Note to self:
 
 Models:
 - [ ] Multilayer percetron
-    - Basic
-    - Find best input
-    - dropout
-    - batch norm
+    - [X] Basic
+    - [ ] Find best input
+    - [ ] Dropout
+    - [ ] Batch norm
 - [ ] CNN
     - Basic CIFAR10
     - Resnet-X
