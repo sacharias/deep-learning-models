@@ -4,7 +4,7 @@ Implementations of various deep learning models, mainly in PyTorch.
 Models:
 - [ ] Multilayer percetron
     - [X] Basic
-    - [ ] Find best input
+    - [X] Find best input
     - [ ] Dropout
     - [ ] Batch norm
 - [ ] CNN
